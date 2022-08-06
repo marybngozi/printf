@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 	va_list ds;
 
 	va_start(ds, format);
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
