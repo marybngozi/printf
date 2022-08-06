@@ -8,5 +8,4 @@
 !*/
 
 # ignore specific files
-_putchar.c
 main.c
