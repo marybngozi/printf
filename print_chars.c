@@ -8,6 +8,10 @@ int _print_chars(char *str)
 {
 	int j = 0;
 
+	if (!str)
+	{
+		return (j);
+	}
 	while (str[j])
 	{
 		_putchar(str[j]);
