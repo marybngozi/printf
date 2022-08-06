@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _print_chars - prints characters using putchar
- * @n: number of integers passed to the function
+ * @str: characters to print
  * Return: number of characters
  */
 int _print_chars(char *str)

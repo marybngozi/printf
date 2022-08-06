@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0, c = 0, k;
 	char cr, *str;
-	va_list ds;	
+	va_list ds;
 
 	va_start(ds, format);
 	while (format[i])
