@@ -16,6 +16,7 @@ int count_int(int n)
 		x++;
 		n = -n;
 	}
+	x++;
 	while (n / 10)
 	{
 		n = n / 10;
