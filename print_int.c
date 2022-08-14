@@ -1,29 +1,25 @@
-#include <stdio.h>
-#include <stdlib.h>
-
+#include "main.h"
 /**
  * print_int - prints integers
- * @num: input number
- *
+ * @n: input number
  * Return: number of chatacters printed
  */
 
-void print_int(int num)
+int print_int(int n)
 {
-	int x;
-	int y;
+	int y = 0;
 
-	if (num < 0)
+	if (n < 0)
 	{
-		num = num * -1;
-		putchar('-');
+		_putchar('-');
+		y++;
+		n = -n;
 	}
-	x = num % 10;
-	num = num - x;
-	if (num >= 10)
+	while (n / 10)
 	{
-		y = num / 10;
-		print_int(y);
+		_putchar(n % 10 + '0');
+		n = n / 10;
+		y++;
 	}
-	putchar(x + '0');
+	return (y);
 }

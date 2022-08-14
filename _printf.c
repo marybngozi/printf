@@ -37,11 +37,12 @@ int _printf(const char *format, ...)
 			c += k;
 			continue;
 		}
-		else if (format[i] == '%' && format[i + 1] == 'd')
+		else if (format[i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
 		{
 			num = va_arg(ds, int);
-			print_int(num);
+			k = print_int(num);
 			i += 2;
+			c += k;
 			continue;
 		}
 		_putchar(format[i]);
