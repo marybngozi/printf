@@ -34,14 +34,20 @@ int count_int(int n)
 
 void print_num(int n)
 {
+	unsigned int n1;
+
 	if (n < 0)
 	{
+		n1 = -n;
 		_putchar('-');
-		n = -n;
 	}
-	if (n / 10)
-		print_num(n / 10);
-	_putchar(n % 10 + '0');
+	else
+	{
+		n1 = n;
+	}
+	if (n1 / 10)
+		print_num(n1 / 10);
+	_putchar(n1 % 10 + '0');
 }
 
 /**
