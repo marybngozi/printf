@@ -18,27 +18,29 @@ int _printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
-		{
 			i++;
-		}
 		else if (format[i] == '%' && format[i + 1] == 'c')
 		{
 			cr = va_arg(ds, int);
 			_putchar(cr);
-			i += 2;
-			c++;
+			i += 2, c++;
 			continue;
 		}
 		else if (format[i] == '%' && format[i + 1] == 's')
 		{
 			str = va_arg(ds, char *);
 			k = _print_chars(str);
-			i += 2;
-			c += k;
+			i += 2, c += k;
 			continue;
 		}
-		_putchar(format[i]);
-		i++, c++;
+		else if (format[i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
+		{
+			num = va_arg(ds, int);
+			k = print_int(num);
+			i += 2, c += k;
+			continue;
+		}
+		_putchar(format[i]), i++, c++;
 	}
 	va_end(ds);
 	return (c);
