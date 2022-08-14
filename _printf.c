@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, c = 0, k;
+	int i = 0, c = 0, num, k;
 	char cr, *str;
 	va_list ds;
 
@@ -33,6 +33,14 @@ int _printf(const char *format, ...)
 		{
 			str = va_arg(ds, char *);
 			k = _print_chars(str);
+			i += 2;
+			c += k;
+			continue;
+		}
+		else if (format[i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
+		{
+			num = va_arg(ds, int);
+			k = print_int(num);
 			i += 2;
 			c += k;
 			continue;
